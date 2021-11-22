@@ -14,21 +14,6 @@ import java.util.Scanner;
 
 final class Energy {
     /**
-    * Prevent instantiation.
-    * Throw an exception IllegalStateException.
-    * if this ever is called
-    *
-    * @throws IllegalStateException
-    *
-    */
-    private Energy() {
-        // Prevent instantiation
-        // Optional: throw an exception e.g. AssertionError
-        // if this ever *is* called
-        throw new IllegalStateException("Cannot be instantiated");
-    }
-
-    /**
     * Declaring exponent variable.
     */
     public static final double POW2 = 2;
@@ -47,6 +32,21 @@ final class Energy {
     public static final double SPEEDOFLIGHT = 2.998;
 
     /**
+    * Prevent instantiation.
+    * Throw an exception IllegalStateException.
+    * if this ever is called
+    *
+    * @throws IllegalStateException
+    *
+    */
+    private Energy() {
+        // Prevent instantiation
+        // Optional: throw an exception e.g. AssertionError
+        // if this ever *is* called
+        throw new IllegalStateException("Cannot be instantiated");
+    }
+
+    /**
     * Starting...
     *
     * @param args No args will be used
@@ -58,7 +58,7 @@ final class Energy {
 
         // Create a scanner object
         final Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter the mass of an object in Kg:");
+        System.out.print("Enter the mass of an object in Kg: ");
 
         // Checks if there is an Invalid Input. (try...catch)
         try {
@@ -71,11 +71,11 @@ final class Energy {
 
             // Output
             System.out.println(mass + "kg of mass would produce "
-                + energy + "J" + " of energy.");
+                + energy + " (J)" + " of energy.");
         }
-        catch (Exception invalid) {
+        catch (java.util.InputMismatchException errorCode) {
             // Invalid Input.
-            System.out.println("sorry, that was not a number.");
+            System.out.println("Sorry, that was not a number.");
         }
         System.out.println("\nDone.");
     }
